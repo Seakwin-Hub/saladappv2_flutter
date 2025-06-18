@@ -1,0 +1,8 @@
+version: "Apple Swift version 6.1.2 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)"
+options: "20d95bf34dc18aa7eef64d22462d146d23dfed6e3deba5511078744e9b04bdd5"
+build_start_time: [1749151172, 350683000]
+build_end_time: [1749151186, 237635000]
+inputs:
+  "/Users/chhimseakwin/Desktop/File/Mobile/salad_detect_project/saladappv2_flutter/ios/Runner/AppDelegate.swift": [1739383463, 0]
+  ? "/Users/chhimseakwin/Desktop/File/Mobile/salad_detect_project/saladappv2_flutter/ios/build/Runner.build/Release-iphoneos/Runner.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1749151172, 334354157]
