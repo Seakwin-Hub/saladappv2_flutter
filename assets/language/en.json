@@ -22,5 +22,10 @@
   "already_have_account": "Already have account?",
   "create_new_info": "Create a new account to enjoy with our amazing App.",
   "phone": "Phone Number",
-  "email": "Email Address"
+  "email": "Email Address",
+  "home_bar": "Home",
+  "salad_bar": "Salad",
+  "camera_bar": "Camera",
+  "disease_bar": "Disease",
+  "profile_bar": "profile"
 }

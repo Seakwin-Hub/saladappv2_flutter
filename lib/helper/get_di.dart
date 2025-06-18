@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:saladappv2_flutter/common/controller/theme_controller.dart';
+import 'package:saladappv2_flutter/features/dashboard/controller/dashboard_controller.dart';
 import 'package:saladappv2_flutter/features/localization/domain/models/language_model.dart';
 import 'package:saladappv2_flutter/features/onboard/controller/onboarding_controller.dart';
 import 'package:saladappv2_flutter/features/onboard/domain/repositories/onboarding_repository.dart';
@@ -33,6 +34,7 @@ Future<Map<String, Map<String, String>>> init() async {
   Get.lazyPut(
     () => OnboardingController(onboardingServiceInterface: Get.find()),
   );
+  Get.lazyPut(() => DashboardController());
 
   /// Retrieving localized data
   Map<String, Map<String, String>> languages = {};
