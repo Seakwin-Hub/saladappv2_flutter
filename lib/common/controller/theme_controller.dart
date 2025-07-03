@@ -23,12 +23,6 @@ class ThemeController extends GetxController implements GetxService {
     update();
   }
 
-  void setTheme(bool darkTheme) {
-    _darkTheme = darkTheme;
-    sharedPreferences.setBool(AppConstants.theme, _darkTheme);
-    update();
-  }
-
   void changeTheme(Color lightColor, Color darkColor) {
     _lightColor = lightColor;
     _darkColor = darkColor;

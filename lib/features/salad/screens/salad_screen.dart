@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saladappv2_flutter/util/style.dart';
 
 class SaladScreen extends StatelessWidget {
   const SaladScreen({super.key});
@@ -10,7 +11,9 @@ class SaladScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Salad")],
+          children: [
+            Text("Salad", style: robotoBlack.copyWith(color: Colors.black)),
+          ],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saladappv2_flutter/util/style.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -10,7 +11,9 @@ class ProfileScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Profile")],
+          children: [
+            Text("Profile", style: robotoBlack.copyWith(color: Colors.black)),
+          ],
         ),
       ),
     );

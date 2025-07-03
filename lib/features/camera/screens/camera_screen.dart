@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saladappv2_flutter/util/style.dart';
 
 class CameraScreen extends StatelessWidget {
   const CameraScreen({super.key});
@@ -10,7 +11,9 @@ class CameraScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("Camera")],
+          children: [
+            Text("Camera", style: robotoBlack.copyWith(color: Colors.black)),
+          ],
         ),
       ),
     );

@@ -160,7 +160,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               side: BorderSide(color: Colors.transparent),
                               backgroundColor: AppColors.green,
                             ),
-                            child: Icon(Iconsax.arrow_right_3),
+                            child: Icon(
+                              Iconsax.arrow_right_3,
+                              color: AppColors.white,
+                            ),
                           ),
                         ),
                       ],

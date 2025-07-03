@@ -27,5 +27,7 @@
   "salad_bar": "Salad",
   "camera_bar": "Camera",
   "disease_bar": "Disease",
-  "profile_bar": "profile"
+  "profile_bar": "Profile",
+  "welcome_back": "Welcome Back,",
+  "search_salad_disease": "Search salad and disease"
 }
