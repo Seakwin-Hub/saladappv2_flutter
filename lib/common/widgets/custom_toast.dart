@@ -47,7 +47,7 @@ class CustomToast extends StatelessWidget {
                 Flexible(
                   child: Text(
                     text,
-                    style: robotoRegular.copyWith(color: textColor),
+                    style: battambangRegular.copyWith(color: textColor),
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),

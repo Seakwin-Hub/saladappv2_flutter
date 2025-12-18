@@ -1,13 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:saladappv2_flutter/features/auth/screens/sign_in_screen.dart';
-import 'package:saladappv2_flutter/features/auth/screens/sign_up_screen.dart';
-import 'package:saladappv2_flutter/features/camera/screens/camera_screen.dart';
-import 'package:saladappv2_flutter/features/dashboard/screens/dashboard_screen.dart';
-import 'package:saladappv2_flutter/features/disease/screens/disease_screen.dart';
-import 'package:saladappv2_flutter/features/home/screens/home_screen.dart';
-import 'package:saladappv2_flutter/features/onboard/screens/onboarding_screen.dart';
-import 'package:saladappv2_flutter/features/profile/screens/profile_screen.dart';
-import 'package:saladappv2_flutter/features/salad/screens/salad_screen.dart';
+import 'package:saladappv2_flutter/domain/models/disease_list_model.dart';
+import 'package:saladappv2_flutter/domain/models/salad_list_model.dart';
+import 'package:saladappv2_flutter/presentation/controller/onboarding_controller.dart';
+import 'package:saladappv2_flutter/presentation/screens/camera_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/dashboard_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/disease_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/home_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/item_detail_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/onboarding_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/profile_screen.dart';
+import 'package:saladappv2_flutter/presentation/screens/salad_screen.dart';
 
 class RouterHelper {
   static const initial = "/";
@@ -22,12 +25,16 @@ class RouterHelper {
   static const String profile = '/profile';
   static const String cameraScreen = '/camera';
   static const String main = '/main';
+  static const String itemDetail = '/item-detail';
 
-  // static String getInitialRoute => InitialScreen();
+  static String getInitialRoute({bool fromOnBoard = false}) =>
+      '$initial?from-onboard=$fromOnBoard';
   // static String getLanguageRoute(String page) => '$language?page=$page';
 
   static String getOnboardingScreen() => onboard;
   static String getMainRoute(String page) => '$main?page=$page';
+  static String getItemDetailsRoute(int? itemID, bool isSalad) =>
+      '$itemDetail?id=$itemID&check=$isSalad';
   static String getSignInScreen() => signIn;
   static String getSignUpScreen() => signUp;
   static String getHomeScreen() => homeScreen;
@@ -36,49 +43,65 @@ class RouterHelper {
   static String getProfileScreen() => profile;
   static String getCameraScreen() => cameraScreen;
 
-  static String getDashboardScreen({bool fromSplash = true}) =>
-      '$dashboard?from-splash=$fromSplash';
-
   static List<GetPage> routes = [
+    GetPage(
+      name: initial,
+      page:
+          () => getRoute(
+            DashboardScreen(
+              pageIndex: 0,
+              fromOnBoard: Get.parameters['from-onboard'] == 'true',
+            ),
+          ),
+    ),
+    GetPage(
+      name: itemDetail,
+      page:
+          () => getRoute(
+            Get.arguments ??
+                ItemDetailScreen(
+                  isSalad: Get.parameters['check'] == 'true',
+                  itemDisease: DiseaseModel(
+                    diseaseId: int.parse(Get.parameters['id']!),
+                  ),
+                  itemSalad: SaladModel(
+                    saladId: int.parse(Get.parameters['id']!),
+                  ),
+                ),
+          ),
+    ),
     GetPage(name: onboard, page: () => OnboardingScreen()),
-    GetPage(name: signIn, page: () => SignInScreen()),
     GetPage(name: homeScreen, page: () => HomeScreen()),
     GetPage(name: diseaseScreen, page: () => DiseaseScreen()),
     GetPage(name: saladScreen, page: () => SaladScreen()),
     GetPage(name: profile, page: () => ProfileScreen()),
     GetPage(name: cameraScreen, page: () => CameraScreen()),
-    GetPage(name: signUp, page: () => SignUpScreen()),
     GetPage(
       name: main,
       page:
-          () => DashboardScreen(
-            pageIndex:
-                Get.parameters['page'] == 'home'
-                    ? 0
-                    : Get.parameters['page'] == 'salad'
-                    ? 1
-                    : Get.parameters['page'] == 'camera'
-                    ? 2
-                    : Get.parameters['page'] == 'disease'
-                    ? 3
-                    : Get.parameters['page'] == 'profile'
-                    ? 4
-                    : 0,
+          () => getRoute(
+            DashboardScreen(
+              pageIndex:
+                  Get.parameters['page'] == 'home'
+                      ? 0
+                      : Get.parameters['page'] == 'salad'
+                      ? 1
+                      : Get.parameters['page'] == 'camera'
+                      ? 2
+                      : Get.parameters['page'] == 'disease'
+                      ? 3
+                      : Get.parameters['page'] == 'profile'
+                      ? 4
+                      : 0,
+            ),
           ),
     ),
-    GetPage(
-      name: dashboard,
-      page:
-          () => DashboardScreen(
-            pageIndex: 0,
-            fromSplash: Get.parameters['from-splash'] == 'true',
-          ),
-    ),
-
-    // GetPage(name: initial, page: () => getInitailRoute());
-    // GetPage(
-    //     name: language,
-    //     page: () =>
-    //         ChooseLanguageScreen(fromMenu: Get.parameters['page'] == 'menu')),
   ];
+
+  ///It will check when the app first runiing did it show go to onboarding(first time) or other screen
+  static Widget getRoute(Widget navigateTo) {
+    return Get.find<OnboardingController>().getOnboardingKey() == false
+        ? OnboardingScreen()
+        : navigateTo;
+  }
 }

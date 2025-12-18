@@ -87,7 +87,9 @@ class CustomButton extends StatelessWidget {
                           SizedBox(width: Dimensions.paddingSizeSmall.w),
                           Text(
                             'loading',
-                            style: robotoMedium.copyWith(color: Colors.white),
+                            style: battambangRegular.copyWith(
+                              color: Colors.white,
+                            ),
                           ),
                         ],
                       ),
@@ -114,7 +116,7 @@ class CustomButton extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style:
                               isBold
-                                  ? robotoBold.copyWith(
+                                  ? battambangBold.copyWith(
                                     color:
                                         textColor ??
                                         (transparent
@@ -123,7 +125,7 @@ class CustomButton extends StatelessWidget {
                                     fontSize:
                                         fontSize ?? Dimensions.fontSizeLarge.sp,
                                   )
-                                  : robotoRegular.copyWith(
+                                  : battambangRegular.copyWith(
                                     color:
                                         textColor ??
                                         (transparent

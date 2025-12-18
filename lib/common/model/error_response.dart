@@ -27,17 +27,21 @@ class ErrorResponse {
 class Errors {
   String? _code;
   String? _message;
+  String? _msg;
 
   String? get code => _code;
   String? get message => _message;
+  String? get msg => _msg;
 
-  Errors({String? code, String? message}) {
+  Errors({String? code, String? message, String? msg}) {
     _code = code;
     _message = message;
+    _msg = msg;
   }
 
   Errors.fromJson(dynamic json) {
     _code = json['code'];
+    _msg = json['msg'];
     _message = json['message'];
   }
 
@@ -45,6 +49,7 @@ class Errors {
     var map = <String, dynamic>{};
 
     map['code'] = _code;
+    map['msg'] = _msg;
     map['message'] = _message;
     return map;
   }

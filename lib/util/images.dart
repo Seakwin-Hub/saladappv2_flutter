@@ -12,6 +12,7 @@ class Images {
   static const String showLettuce = "assets/images/Salad_Plash_1.json";
   static const String detectionSalad = "assets/images/detection.json";
   static const String diseaseDetected = "assets/images/disease_animate.json";
+  static const String lostConnection = "assets/images/lost_connection.json";
 
   ///Icon Svg
   static const String homeBar = "assets/images/home_bar.svg";
@@ -22,7 +23,12 @@ class Images {
   static const String notification = "assets/images/notification.svg";
   static const String search = "assets/images/search_icon.svg";
   static const String modeOption = "assets/images/mode_option.svg";
+  static const String serverError = "assets/images/server_maintenance.svg";
 
   ///Normal Image
   static const String profileRonaldo = "assets/images/ronaldo_profile.jpg";
+  static const String emailIcon = "assets/images/mail.png";
+  static const String developerIcon = "assets/images/coding.png";
+  static const String telephone = "assets/images/telephone.png";
+  static const String defenseDate = "assets/images/startup.png";
 }

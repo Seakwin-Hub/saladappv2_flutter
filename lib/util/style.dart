@@ -27,6 +27,35 @@ final robotoBlack = TextStyle(
   fontSize: Dimensions.fontSizeDefault.sp,
 );
 
+final battambangRegular = TextStyle(
+  fontFamily: AppConstants.fontFamily,
+  fontWeight: FontWeight.w400,
+  fontSize: Dimensions.fontSizeDefault.sp,
+);
+
+final battambangLight = TextStyle(
+  fontFamily: AppConstants.fontFamily,
+  fontWeight: FontWeight.w300,
+  fontSize: Dimensions.fontSizeDefault.sp,
+);
+
+final battambangBold = TextStyle(
+  fontFamily: AppConstants.fontFamily,
+  fontWeight: FontWeight.w700,
+  fontSize: Dimensions.fontSizeDefault.sp,
+);
+
+final battambangBlack = TextStyle(
+  fontFamily: AppConstants.fontFamily,
+  fontWeight: FontWeight.w900,
+  fontSize: Dimensions.fontSizeDefault.sp,
+);
+final battambangThin = TextStyle(
+  fontFamily: AppConstants.fontFamily,
+  fontWeight: FontWeight.w100,
+  fontSize: Dimensions.fontSizeDefault.sp,
+);
+
 class AppColors {
   AppColors._();
 

@@ -5,7 +5,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.2
+  sdk: ">=3.2.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -17,14 +17,16 @@ dependencies:
   shared_preferences: ^2.5.3
   http: ^1.4.0
   image_picker: ^1.1.2
-  phone_numbers_parser: ^9.0.3
-  country_code_picker: ^3.3.0
   flutter_svg: ^2.2.0
   lottie: ^3.3.1
-  logger: ^2.5.0
   smooth_page_indicator: ^1.2.1
   iconsax: ^0.0.8
   carousel_slider: ^5.1.1
+  cached_network_image: ^3.4.1
+  connectivity_plus: ^7.0.0
+  dotted_border: ^3.1.0
+  photo_view: ^0.15.0
+  image_compression_flutter: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -50,3 +52,16 @@ flutter:
           weight: 700
         - asset: assets/font/Roboto-Black.ttf
           weight: 900
+
+    - family: Battambang
+      fonts:
+        - asset: assets/font/Battambang-Regular.ttf
+          weight: 400
+        - asset: assets/font/Battambang-Light.ttf
+          weight: 300
+        - asset: assets/font/Battambang-Bold.ttf
+          weight: 700
+        - asset: assets/font/Battambang-Black.ttf
+          weight: 900
+        - asset: assets/font/Battambang-Thin.ttf
+          weight: 100
