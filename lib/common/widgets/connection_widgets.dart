@@ -21,10 +21,9 @@ class LostConnectionWidget extends StatelessWidget {
       children: [
         SizedBox(
           width: DeviceUtils.screenWidth(),
-          height:
-              isHomeScreen
-                  ? DeviceUtils.screenHeight() * 0.54
-                  : DeviceUtils.screenHeight() * 0.64,
+          height: isHomeScreen
+              ? DeviceUtils.screenHeight() * 0.54
+              : DeviceUtils.screenHeight() * 0.64,
         ),
         Positioned(
           top: isHomeScreen ? 0 : 50,
@@ -40,10 +39,9 @@ class LostConnectionWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               "lost_connection".tr,
               style: battambangBold.copyWith(
-                color:
-                    Get.find<ThemeController>().darkTheme
-                        ? Colors.redAccent
-                        : Colors.black,
+                color: Get.find<ThemeController>().darkTheme
+                    ? Colors.redAccent
+                    : Colors.black,
                 fontSize: 18.sp,
               ),
             ),
@@ -52,10 +50,9 @@ class LostConnectionWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               "lost_connection_msg".tr,
               style: battambangRegular.copyWith(
-                color:
-                    Get.find<ThemeController>().darkTheme
-                        ? Colors.white
-                        : Colors.black45,
+                color: Get.find<ThemeController>().darkTheme
+                    ? Colors.white
+                    : Colors.black45,
                 fontSize: 14.sp,
               ),
             ),
@@ -92,10 +89,9 @@ class ServerLostConnection extends StatelessWidget {
             textAlign: TextAlign.center,
             "server_maintenance_msg".tr,
             style: battambangRegular.copyWith(
-              color:
-                  Get.find<ThemeController>().darkTheme
-                      ? Colors.white
-                      : Colors.black45,
+              color: Get.find<ThemeController>().darkTheme
+                  ? Colors.white
+                  : Colors.black45,
               fontSize: 14.sp,
             ),
           ),
@@ -106,7 +102,7 @@ class ServerLostConnection extends StatelessWidget {
           width: 120.w,
           fontSize: 14.sp,
           height: 34.h,
-          buttonText: "Retry",
+          buttonText: "retry".tr,
           onPressed: () {
             if (Get.find<SaladController>().isExceptionError &&
                 !Get.find<SaladController>().isLoading) {

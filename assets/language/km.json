@@ -3,12 +3,12 @@
 
   "salad_app": "កម្មវិធីវិភាគជំងឺសាឡាដ",
 
-  "on_boarding_1_title": "Get Favorite Items",
-  "on_boarding_2_title": "Easy Payment",
-  "on_boarding_3_title": "Fast Delivery",
-  "on_boarding_1_description": "Select your location to see the wide range stores and order your desired item.",
-  "on_boarding_2_description": "Order item with COD payment or pay by safer and faster payment gateway.",
-  "on_boarding_3_description": "Hundreds of delivery man are waiting for your order. So place your order and get the item delivered to your doorstep!",
+  "on_boarding_1_title": "គ្រប់សាឡាដគឺនៅទីនេះ",
+  "on_boarding_2_title": "ការពារសាឡាដរបស់អ្នក",
+  "on_boarding_3_title": "វិធីសាស្រ្តព្យាបាលជំងឺសាឡាដរបស់អ្នក",
+  "on_boarding_1_description": "ស្វែងរកសាឡាដរបស់អ្នកនៅក្នុងកម្មវិធីនេះ អ្នកអាចស្វែងរកសាឡាដដែលអ្នកចង់បាន ហើយមើលថាតើវាមើលទៅដូចម្ដេច។",
+  "on_boarding_2_description": "មិនត្រឹមតែស្វែងរកសាឡាដរបស់អ្នកប៉ុណ្ណោះទេ អ្នកក៏អាចដឹងពីរបៀបការពារសាឡាដរបស់យើង ដើម្បីធ្វើឱ្យវាមានសុខភាពល្អដូចដែលអ្នកចង់បាន ជាមួយនឹងការស្រាវជ្រាវរបស់ខ្ញុំ។",
+  "on_boarding_3_description": "ការព្យាបាលសាឡាដអាចពិពណ៌នាអំពីរបៀបដែលអ្នកដឹងពីការព្យាបាលសាឡាដដែលអ្នកមាន ដោយគ្រាន់តែថតរូប។",
   "skip": "រំលង",
 
   "welcome_back": "សូមស្វាគមន៍មកកាន់, ",
@@ -48,5 +48,6 @@
   "cancel": "ម្តងទៀត",
   "release_date": "25 - 08 - 2023",
   "result_of_disease": "លទ្ធផលដែលបានរកឃើញ",
-  "image_problem": "រូបភាពមិនអាចស្វែងរកបាន! សូមព្យាយាមម្តងទៀត"
+  "image_problem": "រូបភាពមិនអាចស្វែងរកបាន! សូមព្យាយាមម្តងទៀត",
+  "retry": "សាកល្បងម្តងទៀត"
 }

@@ -38,82 +38,76 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Expanded(
             child: GetBuilder<OnboardingController>(
               builder: (onboardingController) {
-                bool getOnboardingSize =
-                    onboardingController.seletecIndex <
+                bool getOnboardingSize = onboardingController.seletecIndex <
                     onboardingController.onboardingList.length - 1;
                 return onboardingController.onboardingList.isNotEmpty
                     ? Stack(
-                      children: [
-                        PageView.builder(
-                          itemCount: onboardingController.onboardingList.length,
-                          controller: _controller,
-                          onPageChanged: (index) {
-                            onboardingController.changeSeletedIndex(index);
-                          },
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: EdgeInsets.all(
-                                Dimensions.fontSizeOverLarge.w,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  getOnboardingSize &&
-                                          onboardingController
-                                                  .onboardingList[index]
-                                                  .imageUrl !=
-                                              ''
-                                      ? Lottie.asset(
-                                        onboardingController
-                                            .onboardingList[index]
-                                            .imageUrl,
-                                        width: index == 2 ? 200.w : 350.w,
-                                        fit: BoxFit.fill,
-                                      )
-                                      : SizedBox(),
-                                  SizedBox(height: index == 1 ? 50.h : 0.h),
-                                  Text(
-                                    onboardingController
-                                        .onboardingList[index]
-                                        .title,
-                                    style: battambangBold.copyWith(
-                                      fontSize:
-                                          Dimensions.fontSizeExtraLarge.sp,
-                                      color:
-                                          getTheme
-                                              ? AppColors.green
-                                              : AppColors.black,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(height: 20.h),
-                                  Text(
-                                    onboardingController
-                                        .onboardingList[index]
-                                        .description,
-                                    style: battambangRegular.copyWith(
-                                      color:
-                                          getTheme
-                                              ? AppColors.white
-                                              : AppColors.textPrimary,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                        Positioned(
-                          right: Dimensions.paddingSizeDefault.w,
-                          top: DeviceUtils.getAppBarHeight(),
-                          child: TextButton(
-                            onPressed: () {
-                              _controller.jumpToPage(2);
+                        children: [
+                          PageView.builder(
+                            itemCount:
+                                onboardingController.onboardingList.length,
+                            controller: _controller,
+                            onPageChanged: (index) {
+                              onboardingController.changeSeletedIndex(index);
                             },
-                            child:
-                                onboardingController.seletecIndex >= 2
-                                    ? SizedBox()
-                                    : Text(
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: EdgeInsets.all(
+                                  Dimensions.fontSizeOverLarge.w,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    getOnboardingSize &&
+                                            onboardingController
+                                                    .onboardingList[index]
+                                                    .imageUrl !=
+                                                ''
+                                        ? Lottie.asset(
+                                            onboardingController
+                                                .onboardingList[index].imageUrl,
+                                            width: index == 2 ? 200.w : 350.w,
+                                            fit: BoxFit.fill,
+                                          )
+                                        : SizedBox(),
+                                    SizedBox(height: index == 1 ? 50.h : 0.h),
+                                    Text(
+                                      onboardingController
+                                          .onboardingList[index].title,
+                                      style: battambangBold.copyWith(
+                                        fontSize:
+                                            Dimensions.fontSizeExtraLarge.sp,
+                                        color: getTheme
+                                            ? AppColors.green
+                                            : AppColors.black,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    SizedBox(height: 20.h),
+                                    Text(
+                                      onboardingController
+                                          .onboardingList[index].description,
+                                      style: battambangRegular.copyWith(
+                                        color: getTheme
+                                            ? AppColors.white
+                                            : AppColors.textPrimary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                          Positioned(
+                            right: Dimensions.paddingSizeDefault.w,
+                            top: DeviceUtils.getAppBarHeight(),
+                            child: TextButton(
+                              onPressed: () {
+                                _controller.jumpToPage(2);
+                              },
+                              child: onboardingController.seletecIndex >= 2
+                                  ? SizedBox()
+                                  : Text(
                                       'skip'.tr,
                                       style: battambangRegular.copyWith(
                                         fontSize: Dimensions.fontSizeLarge.sp,
@@ -121,57 +115,57 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                         color: AppColors.green,
                                       ),
                                     ),
-                          ),
-                        ),
-
-                        Positioned(
-                          bottom:
-                              DeviceUtils.getBottomNavigationBarHeight() + 25.w,
-                          left: Dimensions.paddingSizeDefault.w,
-                          child: SmoothPageIndicator(
-                            controller: _controller,
-                            count:
-                                onboardingController.onboardingList.length - 1,
-                            effect: ExpandingDotsEffect(
-                              activeDotColor:
-                                  getTheme ? AppColors.light : AppColors.dark,
-                              dotHeight: 8,
                             ),
                           ),
-                        ),
-                        Positioned(
-                          bottom:
-                              DeviceUtils.getBottomNavigationBarHeight() + 10.w,
-                          right: Dimensions.paddingSizeDefault.w,
-                          child: ElevatedButton(
-                            onPressed: () {
-                              if (onboardingController.seletecIndex != 2) {
-                                _controller.nextPage(
-                                  duration: Duration(seconds: 1),
-                                  curve: Curves.ease,
-                                );
-                              } else {
-                                Get.offNamed(
-                                  RouterHelper.getInitialRoute(
-                                    fromOnBoard: true,
-                                  ),
-                                );
-                                onboardingController.saveOnboardingKey(true);
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                              shape: CircleBorder(),
-                              side: BorderSide(color: Colors.transparent),
-                              backgroundColor: AppColors.green,
-                            ),
-                            child: Icon(
-                              Iconsax.arrow_right_3,
-                              color: AppColors.white,
+                          Positioned(
+                            bottom: DeviceUtils.getBottomNavigationBarHeight() +
+                                25.w,
+                            left: Dimensions.paddingSizeDefault.w,
+                            child: SmoothPageIndicator(
+                              controller: _controller,
+                              count:
+                                  onboardingController.onboardingList.length -
+                                      1,
+                              effect: ExpandingDotsEffect(
+                                activeDotColor:
+                                    getTheme ? AppColors.light : AppColors.dark,
+                                dotHeight: 8,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    )
+                          Positioned(
+                            bottom: DeviceUtils.getBottomNavigationBarHeight() +
+                                10.w,
+                            right: Dimensions.paddingSizeDefault.w,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                if (onboardingController.seletecIndex != 2) {
+                                  _controller.nextPage(
+                                    duration: Duration(seconds: 1),
+                                    curve: Curves.ease,
+                                  );
+                                } else {
+                                  Get.offNamed(
+                                    RouterHelper.getInitialRoute(
+                                      fromOnBoard: true,
+                                    ),
+                                  );
+                                  onboardingController.saveOnboardingKey(true);
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                side: BorderSide(color: Colors.transparent),
+                                backgroundColor: AppColors.green,
+                              ),
+                              child: Icon(
+                                Iconsax.arrow_right_3,
+                                color: AppColors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     : SizedBox();
               },
             ),

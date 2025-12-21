@@ -32,8 +32,7 @@ class SaladController extends GetxController implements GetxService {
     _streamSubscription = Connectivity().onConnectivityChanged.listen((
       List<ConnectivityResult> result,
     ) {
-      _hasConnection =
-          result.contains(ConnectivityResult.mobile) ||
+      _hasConnection = result.contains(ConnectivityResult.mobile) ||
           result.contains(ConnectivityResult.wifi) ||
           result.contains(ConnectivityResult.vpn);
       update();

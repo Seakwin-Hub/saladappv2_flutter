@@ -3,12 +3,12 @@
 
   "salad_app": "Salad Detection App",
 
-  "on_boarding_1_title": "Get Favorite Items",
-  "on_boarding_2_title": "Easy Payment",
-  "on_boarding_3_title": "Fast Delivery",
-  "on_boarding_1_description": "Select your location to see the wide range stores and order your desired item.",
-  "on_boarding_2_description": "Order item with COD payment or pay by safer and faster payment gateway.",
-  "on_boarding_3_description": "Hundreds of delivery man are waiting for your order. So place your order and get the item delivered to your doorstep!",
+  "on_boarding_1_title": "Every Salad is Here",
+  "on_boarding_2_title": "Protect Your Salad",
+  "on_boarding_3_title": "Find The Treatment of Salad",
+  "on_boarding_1_description": "Find your salad in this app you can find salad you want and see how it look like.",
+  "on_boarding_2_description": "Not only find your salad you can know how can we protect our salad to make it have a good heathy as you want with my research.",
+  "on_boarding_3_description": "The treatment of salad can descrip how you know the treatment of salad that you have by take a photo.",
   "skip": "Skip",
 
   "welcome": "Welcome to Salad Detection App",
@@ -49,5 +49,6 @@
   "release_date": "25 - 08 - 2023",
   "cancel": "Cancel",
   "result_of_disease": "Result of Disease",
-  "image_problem": "This Image Can't Predict! Try again"
+  "image_problem": "This Image Can't Predict! Try again",
+  "retry": "Retry"
 }
