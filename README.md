@@ -7,3 +7,6 @@
 - Detection Disease by upload Image or Take a photo.
 - Display Salad and Disease general research.
 - Clean architecture with GetX (Dependencies Injection, Translation, Manage Routing, etc.)
+
+## Screenshots
+<img width="2000" height="1000" alt="1" src="https://github.com/Seakwin-Hub/assets/blob/main/Detection-Screen-Dark.png" />
