@@ -1,3 +1,5 @@
+
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -7,8 +9,8 @@ plugins {
 
 android {
     namespace = "com.example.saladappv2_flutter"
-    compileSdk = 35
-    ndkVersion = "29.0.14206865"
+    compileSdk = 36
+    // ndkVersion = "29.0.14206865"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -24,8 +26,8 @@ android {
         applicationId = "com.example.saladappv2_flutter"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 21
-        targetSdk = 35
+        minSdk = flutter.minSdkVersion
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
@@ -38,6 +40,7 @@ android {
         }
     }
 }
+
 
 flutter {
     source = "../.."

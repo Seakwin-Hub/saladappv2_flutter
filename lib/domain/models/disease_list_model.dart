@@ -3,9 +3,9 @@ class DiseaseListModel {
   DiseaseListModel({this.diseaseList});
 
   DiseaseListModel.fromJson(Map<String, dynamic> json) {
-    if (json['disease'] != null) {
+    if (json['diseaselist'] != null) {
       diseaseList = <DiseaseModel>[];
-      json['disease'].forEach((v) {
+      json['diseaselist'].forEach((v) {
         diseaseList!.add(DiseaseModel.fromJson(v));
       });
     }
@@ -33,7 +33,7 @@ class DiseaseModel {
 
   DiseaseModel.fromJson(Map<String, dynamic> json) {
     diseaseId = json['did'];
-    diseaseName = json['disease'];
+    diseaseName = json['disease'].toString();
     causeOfDisease = json['cause'];
     diseaseMeaning = json['dmeaning'];
     typeOfDisease = json['typedisease'];

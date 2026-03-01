@@ -67,7 +67,7 @@ class SaladController extends GetxController implements GetxService {
   }
 
   Future<void> getSaladById(SaladModel salad) async {
-    _salad = null;
+    _salad ??= SaladModel();
     if (_salad!.saladName != null) {
       _salad = salad;
     } else {

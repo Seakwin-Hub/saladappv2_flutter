@@ -1,4 +1,5 @@
 import 'package:saladappv2_flutter/domain/models/language_model.dart';
+import 'package:saladappv2_flutter/helper/device_util.dart';
 import 'package:saladappv2_flutter/util/images.dart';
 
 class AppConstants {
@@ -7,7 +8,9 @@ class AppConstants {
 
   ///Shared Key
   static const String appName = "Salad Detection";
-  static const String baseUrl = 'http://10.0.2.2:5000';
+  static String baseUrl = DeviceUtils.isAndroid()
+      ? 'http://10.0.2.2:5000'
+      : 'http://127.0.0.1:5000';
   static const String diseaseListUri = '/diseaselist';
   static const String diseaseByIdUri = '/disease';
   static const String saladListUri = '/saladlist';

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:saladappv2_flutter/common/widgets/web_error_screen.dart';
 import 'package:saladappv2_flutter/domain/models/disease_list_model.dart';
 import 'package:saladappv2_flutter/domain/models/salad_list_model.dart';
+import 'package:saladappv2_flutter/helper/responsive_helper.dart';
 import 'package:saladappv2_flutter/presentation/controller/onboarding_controller.dart';
 import 'package:saladappv2_flutter/presentation/screens/camera_screen.dart';
 import 'package:saladappv2_flutter/presentation/screens/dashboard_screen.dart';
@@ -46,29 +48,27 @@ class RouterHelper {
   static List<GetPage> routes = [
     GetPage(
       name: initial,
-      page:
-          () => getRoute(
-            DashboardScreen(
-              pageIndex: 0,
-              fromOnBoard: Get.parameters['from-onboard'] == 'true',
-            ),
-          ),
+      page: () => getRoute(
+        DashboardScreen(
+          pageIndex: 0,
+          fromOnBoard: Get.parameters['from-onboard'] == 'true',
+        ),
+      ),
     ),
     GetPage(
       name: itemDetail,
-      page:
-          () => getRoute(
-            Get.arguments ??
-                ItemDetailScreen(
-                  isSalad: Get.parameters['check'] == 'true',
-                  itemDisease: DiseaseModel(
-                    diseaseId: int.parse(Get.parameters['id']!),
-                  ),
-                  itemSalad: SaladModel(
-                    saladId: int.parse(Get.parameters['id']!),
-                  ),
-                ),
-          ),
+      page: () => getRoute(
+        Get.arguments ??
+            ItemDetailScreen(
+              isSalad: Get.parameters['check'] == 'true',
+              itemDisease: DiseaseModel(
+                diseaseId: int.parse(Get.parameters['id']!),
+              ),
+              itemSalad: SaladModel(
+                saladId: int.parse(Get.parameters['id']!),
+              ),
+            ),
+      ),
     ),
     GetPage(name: onboard, page: () => OnboardingScreen()),
     GetPage(name: homeScreen, page: () => HomeScreen()),
@@ -78,30 +78,30 @@ class RouterHelper {
     GetPage(name: cameraScreen, page: () => CameraScreen()),
     GetPage(
       name: main,
-      page:
-          () => getRoute(
-            DashboardScreen(
-              pageIndex:
-                  Get.parameters['page'] == 'home'
-                      ? 0
-                      : Get.parameters['page'] == 'salad'
-                      ? 1
-                      : Get.parameters['page'] == 'camera'
+      page: () => getRoute(
+        DashboardScreen(
+          pageIndex: Get.parameters['page'] == 'home'
+              ? 0
+              : Get.parameters['page'] == 'salad'
+                  ? 1
+                  : Get.parameters['page'] == 'camera'
                       ? 2
                       : Get.parameters['page'] == 'disease'
-                      ? 3
-                      : Get.parameters['page'] == 'profile'
-                      ? 4
-                      : 0,
-            ),
-          ),
+                          ? 3
+                          : Get.parameters['page'] == 'profile'
+                              ? 4
+                              : 0,
+        ),
+      ),
     ),
   ];
 
   ///It will check when the app first runiing did it show go to onboarding(first time) or other screen
   static Widget getRoute(Widget navigateTo) {
-    return Get.find<OnboardingController>().getOnboardingKey() == false
-        ? OnboardingScreen()
-        : navigateTo;
+    return ResponsiveHelper.isWeb()
+        ? WebErrorScreen()
+        : Get.find<OnboardingController>().getOnboardingKey() == false
+            ? OnboardingScreen()
+            : navigateTo;
   }
 }

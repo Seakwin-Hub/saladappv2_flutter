@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:saladappv2_flutter/common/widgets/custom_toast.dart';
+import 'package:saladappv2_flutter/util/dimensions.dart';
 
 void showCustomSnackBar(
   String? message, {
@@ -14,10 +15,14 @@ void showCustomSnackBar(
         GetSnackBar(
           backgroundColor: isError ? Colors.red : Colors.blueAccent,
           message: message,
-
           maxWidth: 500.w,
-          duration: Duration(seconds: 4),
-          isDismissible: true,
+          duration: Duration(seconds: 3),
+          margin: const EdgeInsets.only(
+              left: Dimensions.paddingSizeSmall,
+              right: Dimensions.paddingSizeSmall,
+              bottom: 0),
+          // isDismissible: true,
+          borderRadius: Dimensions.radiusSmall,
           dismissDirection: DismissDirection.horizontal,
           forwardAnimationCurve: Curves.decelerate,
           snackPosition: SnackPosition.BOTTOM,

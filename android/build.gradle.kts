@@ -9,6 +9,12 @@ val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build"
 rootProject.layout.buildDirectory.value(newBuildDir)
 
 subprojects {
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.activity:activity:1.8.2")
+            force("androidx.activity:activity-ktx:1.8.2")
+        }
+    }
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }

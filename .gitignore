@@ -24,6 +24,16 @@ migrate_working_dir/
 #.vscode/
 
 # Flutter/Dart/Pub related
+
+# iOS build files
+ios/build/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/AppFrameworkInfo.plist
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Optional: Ignore pubspec.lock (Flutter recommendation)
+pubspec.lock
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
