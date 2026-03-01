@@ -1,10 +1,11 @@
-<<<<<<< HEAD
+
 # Salad App V2
 
 A new Salad Detection App V2
 
 ## Getting Started
-=======
+
+
 # 📱 Salad Detection App (Flutter)
 
 > Flutter Salad Detection App. You can using this app to see Salad and Disease Image and Read the Disease Treament that i have research. The app can using image or open camera to take a photo to make Detection and Find the Disease for Salad.
@@ -57,4 +58,4 @@ A new Salad Detection App V2
 ## Profile Screen (Screenshot)
 <img width="2000" height="1000" alt="profile" src="https://github.com/Seakwin-Hub/assets/blob/main/Profile-Screen.png" />
 
->>>>>>> 637b4174458dde906817b2e995656b02219475e6
+
